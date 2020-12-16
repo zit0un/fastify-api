@@ -16,7 +16,7 @@ const swagger = require('./config/swagger')
 fastify.register(require('fastify-swagger'), swagger.options)
 
 // Connect to DB
-mongoose.connect('mongodb://localhost/mycargarage')
+mongoose.connect('mongodb://localhost/mycargarage', { useUnifiedTopology: true, useNewUrlParser: true })
   .then(() => console.log('MongoDB connected...'))
   .catch(err => console.log(err))
 
